@@ -62,6 +62,12 @@ struct ContentView: View {
                     }
                 }
                 
+                if let airPollutionForcastData = forecastAirPollution {
+                    Section(header: Text("Forcast Pollution")) {
+                        Text("\(airPollutionForcastData.coord.lon)")
+                    }
+                }
+                
                 
             }
             // .navigationBarTitle("Weather Info")
@@ -102,7 +108,7 @@ private extension ContentView {
                 self.currentAirPollution = fetchedAirPollution
                 
                 let fetchedForcastAirPollution = try await weatherManager.getForecastAirPollution(latitude: weatherManager.currentLatitude!, longitude: weatherManager.currentLongitude!)
-                self.currentAirPollution = fetchedForcastAirPollution
+                self.forecastAirPollution = fetchedForcastAirPollution
                 
                 
             } catch let error as WeatherError {
@@ -129,5 +135,8 @@ private extension ContentView {
 
 #Preview {
     ContentView()
-//    ContentView(currentWeather: previewWeather)
+//    ContentView(currentWeather: previewWeather,
+//                forecastWeather: preForecastWeather,
+//                currentAirPollution: preCurrentAirPollution)
+//                forecastAirPollution: preForecastAirPollution)
 }
