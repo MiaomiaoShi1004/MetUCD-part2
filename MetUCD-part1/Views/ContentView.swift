@@ -64,7 +64,7 @@ struct ContentView: View {
                 
                 if let airPollutionForcastData = forecastAirPollution {
                     Section(header: Text("Forcast Pollution")) {
-                        Text("\(airPollutionForcastData.coord.lon)")
+                        Text("\(airPollutionForcastData.list[0].main.aqi)")
                     }
                 }
                 
@@ -134,9 +134,9 @@ private extension ContentView {
 
 
 #Preview {
-    ContentView()
-//    ContentView(currentWeather: previewWeather,
-//                forecastWeather: preForecastWeather,
-//                currentAirPollution: preCurrentAirPollution)
-//                forecastAirPollution: preForecastAirPollution)
+//    ContentView()
+    ContentView(currentWeather: previewWeather,
+                forecastWeather: preForecastWeather,
+                currentAirPollution: preCurrentAirPollution,
+                forecastAirPollution: preForecastAirPollution)
 }
