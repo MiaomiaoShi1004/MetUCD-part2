@@ -9,17 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var weatherManager = WeatherManager() // Initialize the WeatherManager
-    @State var weather: ResponseBody?
+    @State var currentWeather: ResponseBody?
+    @State var forecastWeather: ForecastWeatherModel?
     
-    // Adding an initializer to accept weather data
-    init(weather: ResponseBody? = nil) {
-        self._weather = State(initialValue: weather)
-    }
+    @State var currentAirPollution: AirPollutionModel?
+    @State var forecastAirPollution: AirPollutionModel?
     
-    @State private var inputLocation: String = "" // State for user input
-    @State private var errorMessage: String = "" // State for error messages
-    @State private var showError: Bool = false // Flag to show error messages
-    @State private var showWeather: Bool = false // Flag to show weather data
+    @State private var inputLocation: String = ""
+    @State private var errorMessage: String = ""
+    
 
     var body: some View {
         NavigationView {
@@ -32,8 +30,10 @@ struct ContentView: View {
                 if !errorMessage.isEmpty {
                     Text(errorMessage).foregroundColor(.red)
                 }
+                
+                // This line checks if weather is not nil
                 // Conditional view rendering based on API call result
-                if let weatherData = weather {
+                if let weatherData = currentWeather {
                     
                     Section(header: Text("Current Weather")) {
                         IconText(logo: "sunrise", value: "\(weatherData.coord.lon)")
@@ -46,9 +46,23 @@ struct ContentView: View {
                         Text("Latitude: \(weatherData.coord.lat)")
                         Text("Large")
                     }
-
-
                 }
+                
+                // Section for forecast weather data
+                if let forecastData = forecastWeather {
+                    Section(header: Text("Forecast Weather")) {
+                        Text(forecastData.list[0].dt_txt)
+                    }
+                }
+                
+                // Section for current air pollution
+                if let airPollutionData = currentAirPollution {
+                    Section(header: Text("Air Pollution")) {
+                        Text("\(airPollutionData.coord.lon)")
+                    }
+                }
+                
+                
             }
             // .navigationBarTitle("Weather Info")
         }
@@ -62,20 +76,35 @@ extension UIApplication {
     }
 }
 
-#Preview {
-    ContentView(weather: previewWeather)
-}
+
 
 private extension ContentView {
     // Function to fetch weather data
     private func fetchWeather() {
+        // Reset the states for new search
+        self.currentWeather = nil
+        self.forecastWeather = nil
+        self.errorMessage = ""
+        
         Task {
             do {
-                // Attempt to fetch weather data
+                // Fetch current weather data
                 let fetchedWeather = try await weatherManager.getCurrentWeather(location: inputLocation)
-                self.weather = fetchedWeather // Store the fetched data
-                self.showWeather = true // Set flag to show weather data
-                self.showError = false // Reset error flag
+                self.currentWeather = fetchedWeather
+
+                // Fetch forcast weather data
+                let fetchedForcastWeather = try await weatherManager.getForecastWeather(location: inputLocation)
+                self.forecastWeather = fetchedForcastWeather
+                
+                
+                // Air Pollution
+                let fetchedAirPollution = try await weatherManager.getCurrentAirPollution(latitude: weatherManager.currentLatitude!, longitude: weatherManager.currentLongitude!)
+                self.currentAirPollution = fetchedAirPollution
+                
+                let fetchedForcastAirPollution = try await weatherManager.getForecastAirPollution(latitude: weatherManager.currentLatitude!, longitude: weatherManager.currentLongitude!)
+                self.currentAirPollution = fetchedForcastAirPollution
+                
+                
             } catch let error as WeatherError {
                 // Handle specific WeatherError
                 switch error {
@@ -86,15 +115,19 @@ private extension ContentView {
                 case .decodingError:
                     self.errorMessage = "Decoding error."
                 }
-                self.showError = true // Set flag to show error message
-                self.showWeather = false // Reset weather data flag
             } catch {
-                // Handle other errors
-                self.errorMessage = "An unknown error occurred."
-                self.showError = true
-                self.showWeather = false
+                // Print the error for debugging purposes
+                print("Error: \(error.localizedDescription)")
+                self.errorMessage = "An unknown error occurred:\(error.localizedDescription)"
+                    
             }
         }
         UIApplication.shared.endEditing() // Dismiss the keyboard
     }
+}
+
+
+#Preview {
+    ContentView()
+//    ContentView(currentWeather: previewWeather)
 }

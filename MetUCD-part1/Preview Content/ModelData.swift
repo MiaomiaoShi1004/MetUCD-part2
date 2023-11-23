@@ -9,6 +9,9 @@
 import Foundation
 
 var previewWeather: ResponseBody = load("weatherData.json")
+var preForecastWeather: ForecastWeatherModel = load("forcastData.json")
+var preCurrentAirPollution: AirPollutionModel = load("currentAirPollutionData.json")
+var preForecastAirPollution: AirPollutionModel = load("forcastAirPollutionData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
