@@ -142,10 +142,10 @@ struct ContentView: View {
                     }
                     .onAppear {
                         for item in airPollutionForcastData.list {
-                            let dateString = convertTimestampToString(item.dt)
-                            let aqi = item.main.aqi
-                            addIndexData(dt: dateString, aqi: aqi)
-                        }
+                              let dateString = convertTimestampToString(item.dt)
+                              let aqi = item.main.aqi
+                              addIndexData(dt: dateString, aqi: aqi)
+                          }
                     }
                     VStack {
                         Chart {
@@ -171,10 +171,6 @@ struct ContentView: View {
                     }
                     .padding()
                 }
-
-
-                
-                
             }
             // .navigationBarTitle("Weather Info")
         }
@@ -237,11 +233,20 @@ private extension ContentView {
         UIApplication.shared.endEditing() // Dismiss the keyboard
     }
     
-    // popping the weather index array
+    // popping the weather index array ( but in a unique way)
     func addIndexData(dt: String, aqi: Int) {
-        let newData = AirQualityDataPoint(dt: dt, aqi: aqi)
-        airPollutionIndexes.append(newData)
+        // Check if `dt` already exists in `airPollutionIndexes`
+        if !airPollutionIndexes.contains(where: { $0.dt == dt }) {
+            let newData = AirQualityDataPoint(dt: dt, aqi: aqi)
+            airPollutionIndexes.append(newData)
+        } else {
+            // Optionally, handle the case where `dt` is not unique, such as updating the existing record's `aqi`
+            if let index = airPollutionIndexes.firstIndex(where: { $0.dt == dt }) {
+                airPollutionIndexes[index].aqi = aqi
+            }
+        }
     }
+
     
     // helper method for converting the timestamp to a string
     func convertTimestampToString(_ timestamp: Int) -> String {
@@ -254,9 +259,9 @@ private extension ContentView {
 
 
 #Preview {
-//    ContentView()
-    ContentView(currentWeather: previewWeather,
-                forecastWeather: preForecastWeather,
-                currentAirPollution: preCurrentAirPollution,
-                forecastAirPollution: preForecastAirPollution)
+    ContentView()
+//    ContentView(currentWeather: previewWeather,
+//                forecastWeather: preForecastWeather,
+//                currentAirPollution: preCurrentAirPollution,
+//                forecastAirPollution: preForecastAirPollution)
 }

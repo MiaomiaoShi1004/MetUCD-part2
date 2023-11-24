@@ -64,8 +64,8 @@ extension AirPollutionModel.PollutionItem.Components {
 
 //Define a struct to represent each data point in the chart:
 struct AirQualityDataPoint {
-    let dt: String
-    let aqi: Int
+    var dt: String
+    var aqi: Int
     
     var aqiLevel: String {
         switch aqi {
