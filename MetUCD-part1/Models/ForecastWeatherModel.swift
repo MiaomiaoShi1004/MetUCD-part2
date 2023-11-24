@@ -11,6 +11,7 @@ struct ForecastWeatherModel: Decodable {
     var list: [ForecastItems]
     
     struct ForecastItems: Decodable {
+        var dt: Int
         var dt_txt: String
         var main: MainResponse
         

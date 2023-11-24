@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var weatherManager = WeatherManager() // Initialize the WeatherManager
-    @State var currentWeather: ResponseBody?
+    @State var currentWeather: currentWeatherModel?
     @State var forecastWeather: ForecastWeatherModel?
     
     @State var currentAirPollution: AirPollutionModel?
@@ -35,38 +35,107 @@ struct ContentView: View {
                 // Conditional view rendering based on API call result
                 if let weatherData = currentWeather {
                     
-                    Section(header: Text("Current Weather")) {
-                        IconText(logo: "sunrise", value: "\(weatherData.coord.lon)")
+                    Section(header: Text("GEO info")) {
+                        IconText(logo: "location", value: "\(weatherData.coord.lon.toDMS()), \(weatherData.coord.lat.toDMS())")
+                        HStack {
+                            IconText(logo: "sunrise", value: "\(weatherData.sys.sunrise.toTimeStringInLondon())")
+                            
+                            Text("(\(weatherData.sys.sunrise.toLocalTimeString(timezoneOffset: weatherData.timezone)))")
+                                .font(.system(size:13))
+                                .foregroundColor(.secondary)
 
-                        Text("Longitude: \(weatherData.coord.lon)")
-                        Text("Large")
+                            
+                            IconText(logo: "sunset", value: "\(weatherData.sys.sunset.toTimeStringInLondon())")
+                            Text("(\(weatherData.sys.sunset.toLocalTimeString(timezoneOffset: weatherData.timezone)))")
+                                .font(.system(size:13))
+                                .foregroundColor(.secondary)
+                        }
+                        IconText(logo: "clock.arrow.2.circlepath", value: "\(weatherData.timezone.formatTimeZone())")
                     }
                     
-                    Section(header: Text("Current Weather B")) {
-                        Text("Latitude: \(weatherData.coord.lat)")
-                        Text("Large")
+                    Section(header: Text("WEATHER: \(weatherData.weather[0].description)")) {
+                        HStack() {
+                            IconText(logo: "thermometer.medium", value: String(format: "%.0f°", weatherData.main.feels_like))
+                            
+                            Text("(L: \(String(format: "%.0f°", weatherData.main.temp_min)) H: \(String(format: "%.0f°", weatherData.main.temp_max)))")
+                                .foregroundColor(.secondary)
+                            
+                            IconText(logo: "thermometer.variable.and.figure", value: "Feels \(String(format: "%.0f°", weatherData.main.feels_like))")
+                        }
+                        IconText(logo: "cloud", value: "\(String(format: "%.0f%%", weatherData.clouds.all)) \(weatherData.weather[0].main)")
+                        IconText(logo: "wind", value: "\(String(format: "%.1f km/h, dir: %.0f°", weatherData.wind.speed, weatherData.wind.deg))")
+                        HStack(spacing:10) {
+                            IconText(logo: "humidity", value: String(format: "%.0f%%", weatherData.main.feels_like))
+                            IconText(logo: "thermometer.sun.circle", value: "\(String(format: "%.0f hPa", weatherData.main.pressure))")
+                        }
+                    }
+                }
+                
+                //
+                if let airPollutionForcastData = forecastAirPollution {
+                    Section(header: Text("air pollution index forcast")) {
+                        Text("\(airPollutionForcastData.list[0].main.aqi)")
+                    }
+                }
+                
+                // Section for Air Quality -- using ForEach to loop through
+                if let airPollutionData = currentAirPollution {
+                    Section(header: Text("Air quality")) {
+                        // Assume there is only one PollutionItem in your data
+                        let components = airPollutionData.list[0].components.allComponents
+                        // Group the components into pairs
+                        let rows = components.chunked(into: 2)
+                        ForEach(rows, id: \.self) { row in
+                            HStack {
+                                ForEach(row) { component in
+                                    HStack {
+                                        Text("\(component.name)")
+                                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                                        Text("\(component.value, specifier: "%.1f")")
+                                    }
+                                    Spacer()
+                                }
+                                
+                            }
+                        }
+                        Text("(unit μg/m³)")
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
                     }
                 }
                 
                 // Section for forecast weather data
                 if let forecastData = forecastWeather {
                     Section(header: Text("Forecast Weather")) {
-                        Text(forecastData.list[0].dt_txt)
+                        
+                        if let weatherData = currentWeather {
+                            HStack {
+                                Text("Today")
+                                    .foregroundColor(.blue)
+                                Spacer()
+                                IconText(logo: "thermometer.medium", value: "(L: \(String(format: "%.0f°", weatherData.main.temp_min)) H: \(String(format: "%.0f°", weatherData.main.temp_max)))")
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                        
+                        let noonForecasts = forecastData.list.filter { $0.dt_txt.contains("12:00:00") }
+
+                        ForEach(noonForecasts, id: \.dt_txt) { forecast in
+                            // Assuming forecast.dt is a Unix timestamp
+                            let dayOfWeek = forecast.dt.dayOfTheWeek()
+                            HStack {
+                                Text("\(dayOfWeek)")
+                                    .foregroundColor(.blue)
+                                Spacer()
+                                IconText(logo: "thermometer.medium", value: "(L: \(String(format: "%.0f°", forecast.main.temp_min)) H: \(String(format: "%.0f°", forecast.main.temp_max)))")
+                                    .foregroundColor(.secondary)
+                            }
+                        }
                     }
                 }
-                
-                // Section for current air pollution
-                if let airPollutionData = currentAirPollution {
-                    Section(header: Text("Air Pollution")) {
-                        Text("\(airPollutionData.coord.lon)")
-                    }
-                }
-                
-                if let airPollutionForcastData = forecastAirPollution {
-                    Section(header: Text("Forcast Pollution")) {
-                        Text("\(airPollutionForcastData.list[0].main.aqi)")
-                    }
-                }
+
+
                 
                 
             }

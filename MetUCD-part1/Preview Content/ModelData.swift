@@ -8,7 +8,7 @@
 // loading local JSON data an decoding it into a Swift data structure. -> Provide sample data for previews or tesing in a Swift project.
 import Foundation
 
-var previewWeather: ResponseBody = load("weatherData.json")
+var previewWeather: currentWeatherModel = load("weatherData.json")
 var preForecastWeather: ForecastWeatherModel = load("forcastData.json")
 var preCurrentAirPollution: AirPollutionModel = load("currentAirPollutionData.json")
 var preForecastAirPollution: AirPollutionModel = load("forcastAirPollutionData.json")

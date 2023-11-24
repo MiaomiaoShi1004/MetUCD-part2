@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		AA778DC22B0F68F500374DD9 /* IconText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA778DC12B0F68F500374DD9 /* IconText.swift */; };
 		AA778DC42B0F73E100374DD9 /* forcastData.json in Resources */ = {isa = PBXBuildFile; fileRef = AA778DC32B0F73E100374DD9 /* forcastData.json */; };
-		AA778DC72B0F75B500374DD9 /* ResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA778DC62B0F75B500374DD9 /* ResponseBody.swift */; };
+		AA778DC72B0F75B500374DD9 /* currentWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA778DC62B0F75B500374DD9 /* currentWeatherModel.swift */; };
 		AA778DC92B0FC1FA00374DD9 /* ForecastWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA778DC82B0FC1FA00374DD9 /* ForecastWeatherModel.swift */; };
 		AA778DCB2B0FC24300374DD9 /* AirPolutionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA778DCA2B0FC24300374DD9 /* AirPolutionModel.swift */; };
 		AA778DCF2B10036F00374DD9 /* forcastAirPollutionData.json in Resources */ = {isa = PBXBuildFile; fileRef = AA778DCE2B10036F00374DD9 /* forcastAirPollutionData.json */; };
 		AA778DD12B1003B800374DD9 /* currentAirPollutionData.json in Resources */ = {isa = PBXBuildFile; fileRef = AA778DD02B1003B800374DD9 /* currentAirPollutionData.json */; };
+		AA778DD32B100E1500374DD9 /* TestingLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA778DD22B100E1500374DD9 /* TestingLayoutView.swift */; };
+		AA778DD52B100FBB00374DD9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA778DD42B100FBB00374DD9 /* Extensions.swift */; };
 		AA87B2B02B0EFB0D00B95C26 /* MetUCD_part1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87B2AF2B0EFB0D00B95C26 /* MetUCD_part1App.swift */; };
 		AA87B2B22B0EFB0D00B95C26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87B2B12B0EFB0D00B95C26 /* ContentView.swift */; };
 		AA87B2B42B0EFB0E00B95C26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA87B2B32B0EFB0E00B95C26 /* Assets.xcassets */; };
@@ -27,11 +29,13 @@
 /* Begin PBXFileReference section */
 		AA778DC12B0F68F500374DD9 /* IconText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconText.swift; sourceTree = "<group>"; };
 		AA778DC32B0F73E100374DD9 /* forcastData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = forcastData.json; sourceTree = "<group>"; };
-		AA778DC62B0F75B500374DD9 /* ResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBody.swift; sourceTree = "<group>"; };
+		AA778DC62B0F75B500374DD9 /* currentWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentWeatherModel.swift; sourceTree = "<group>"; };
 		AA778DC82B0FC1FA00374DD9 /* ForecastWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeatherModel.swift; sourceTree = "<group>"; };
 		AA778DCA2B0FC24300374DD9 /* AirPolutionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionModel.swift; sourceTree = "<group>"; };
 		AA778DCE2B10036F00374DD9 /* forcastAirPollutionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = forcastAirPollutionData.json; sourceTree = "<group>"; };
 		AA778DD02B1003B800374DD9 /* currentAirPollutionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = currentAirPollutionData.json; sourceTree = "<group>"; };
+		AA778DD22B100E1500374DD9 /* TestingLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingLayoutView.swift; sourceTree = "<group>"; };
+		AA778DD42B100FBB00374DD9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AA87B2AC2B0EFB0D00B95C26 /* MetUCD-part1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MetUCD-part1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA87B2AF2B0EFB0D00B95C26 /* MetUCD_part1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetUCD_part1App.swift; sourceTree = "<group>"; };
 		AA87B2B12B0EFB0D00B95C26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,7 +69,7 @@
 		AA778DC52B0F759600374DD9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AA778DC62B0F75B500374DD9 /* ResponseBody.swift */,
+				AA778DC62B0F75B500374DD9 /* currentWeatherModel.swift */,
 				AA778DC82B0FC1FA00374DD9 /* ForecastWeatherModel.swift */,
 				AA778DCA2B0FC24300374DD9 /* AirPolutionModel.swift */,
 			);
@@ -96,6 +100,7 @@
 				AA87B2BE2B0EFB7400B95C26 /* Managers */,
 				AA778DC52B0F759600374DD9 /* Models */,
 				AA87B2AF2B0EFB0D00B95C26 /* MetUCD_part1App.swift */,
+				AA778DD42B100FBB00374DD9 /* Extensions.swift */,
 				AA87B2B32B0EFB0E00B95C26 /* Assets.xcassets */,
 				AA87B2B52B0EFB0E00B95C26 /* Preview Content */,
 			);
@@ -109,8 +114,8 @@
 				AA87B2BF2B0EFBB000B95C26 /* ModelData.swift */,
 				AA87B2C12B0EFBC300B95C26 /* weatherData.json */,
 				AA778DC32B0F73E100374DD9 /* forcastData.json */,
-				AA778DCE2B10036F00374DD9 /* forcastAirPollutionData.json */,
 				AA778DD02B1003B800374DD9 /* currentAirPollutionData.json */,
+				AA778DCE2B10036F00374DD9 /* forcastAirPollutionData.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			children = (
 				AA87B2B12B0EFB0D00B95C26 /* ContentView.swift */,
 				AA87B2C52B0EFD4200B95C26 /* WeatherView.swift */,
+				AA778DD22B100E1500374DD9 /* TestingLayoutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,9 +217,11 @@
 				AA87B2B22B0EFB0D00B95C26 /* ContentView.swift in Sources */,
 				AA87B2B02B0EFB0D00B95C26 /* MetUCD_part1App.swift in Sources */,
 				AA87B2C42B0EFBF100B95C26 /* WeatherManager.swift in Sources */,
-				AA778DC72B0F75B500374DD9 /* ResponseBody.swift in Sources */,
+				AA778DC72B0F75B500374DD9 /* currentWeatherModel.swift in Sources */,
 				AA778DC92B0FC1FA00374DD9 /* ForecastWeatherModel.swift in Sources */,
+				AA778DD32B100E1500374DD9 /* TestingLayoutView.swift in Sources */,
 				AA87B2C02B0EFBB000B95C26 /* ModelData.swift in Sources */,
+				AA778DD52B100FBB00374DD9 /* Extensions.swift in Sources */,
 				AA778DC22B0F68F500374DD9 /* IconText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

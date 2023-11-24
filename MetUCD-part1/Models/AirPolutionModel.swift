@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct AirPollutionModel: Decodable {
     var coord: Coord
@@ -35,5 +36,28 @@ struct AirPollutionModel: Decodable {
             var pm10: Double
             var nh3: Double
         }
+    }
+}
+
+// Define a simple struct to hold each component's name and value
+struct ComponentValue: Identifiable, Hashable {
+    let id = UUID()
+    let name: String
+    let value: Double
+}
+
+// Extend your AirPollutionModel.PollutionItem.Components to return an array of ComponentValue
+extension AirPollutionModel.PollutionItem.Components {
+    var allComponents: [ComponentValue] {
+        [
+            ComponentValue(name: "CO", value: co),
+            ComponentValue(name: "NO", value: no),
+            ComponentValue(name: "NO2", value: no2),
+            ComponentValue(name: "O3", value: o3),
+            ComponentValue(name: "SO2", value: so2),
+            ComponentValue(name: "PM2.5", value: pm2_5),
+            ComponentValue(name: "PM10", value: pm10),
+            ComponentValue(name: "NH3", value: nh3)
+        ]
     }
 }

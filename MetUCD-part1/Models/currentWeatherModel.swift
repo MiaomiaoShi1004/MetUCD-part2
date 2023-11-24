@@ -1,5 +1,5 @@
 //  This is a Model, will change the name in the future
-//  ResponseModel.swift
+//  currentWeatherModel.swift
 //  MetUCD-part1
 //
 //  Created by Miaomiao Shi on 23/11/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ResponseBody: Decodable {
+struct currentWeatherModel: Decodable {
     var coord: CoordResponse
     var weather: [WeatherResponse]
     var base: String

@@ -22,7 +22,7 @@ class WeatherManager {
     
     // CurrentWeatherAPI
     // Function to fetch current weather data from the OpenWeather API
-    func getCurrentWeather(location inputLocation: String) async throws -> ResponseBody {
+    func getCurrentWeather(location inputLocation: String) async throws -> currentWeatherModel {
         // Constructing the URL string
         let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(inputLocation)&appid=8b75a684ffe1eab191d21598865bb79d&units=metric"
 
@@ -41,7 +41,7 @@ class WeatherManager {
         
         do {
             // Attempt to decode the JSON response into the ResponseBody structure
-            let decodedData = try JSONDecoder().decode(ResponseBody.self, from: data)
+            let decodedData = try JSONDecoder().decode(currentWeatherModel.self, from: data)
             currentLongitude = floor(decodedData.coord.lon)
             currentLatitude = floor(decodedData.coord.lat)
             return decodedData

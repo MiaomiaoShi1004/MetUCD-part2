@@ -10,7 +10,7 @@ import SwiftUI
 struct WeatherView: View {
     // initiate weather manager
     var weatherManager = WeatherManager()
-    @State var weather: ResponseBody?
+    @State var weather: currentWeatherModel?
     
     @State private var inputLocation: String = ""
     @State private var errorMessage: String = ""
