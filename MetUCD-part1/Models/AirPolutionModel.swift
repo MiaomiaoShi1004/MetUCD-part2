@@ -61,3 +61,26 @@ extension AirPollutionModel.PollutionItem.Components {
         ]
     }
 }
+
+//Define a struct to represent each data point in the chart:
+struct AirQualityDataPoint {
+    let dt: String
+    let aqi: Int
+    
+    var aqiLevel: String {
+        switch aqi {
+        case 1:
+            return "Good"
+        case 2:
+            return "Fair"
+        case 3:
+            return "Moderate"
+        case 4:
+            return "Poor"
+        case 5:
+            return "VeryPoor"
+        default:
+            return "Unknown"
+        }
+    }
+}

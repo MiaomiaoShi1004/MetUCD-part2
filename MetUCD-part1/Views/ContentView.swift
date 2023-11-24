@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct ContentView: View {
     var weatherManager = WeatherManager() // Initialize the WeatherManager
@@ -18,7 +19,11 @@ struct ContentView: View {
     @State private var inputLocation: String = ""
     @State private var errorMessage: String = ""
     
-
+    // For the chart define an empty array first
+    @State private var airPollutionIndexes: [AirQualityDataPoint] = [
+    ]
+    
+    
     var body: some View {
         NavigationView {
             Form {
@@ -71,12 +76,7 @@ struct ContentView: View {
                     }
                 }
                 
-                //
-                if let airPollutionForcastData = forecastAirPollution {
-                    Section(header: Text("air pollution index forcast")) {
-                        Text("\(airPollutionForcastData.list[0].main.aqi)")
-                    }
-                }
+
                 
                 // Section for Air Quality -- using ForEach to loop through
                 if let airPollutionData = currentAirPollution {
@@ -134,6 +134,43 @@ struct ContentView: View {
                         }
                     }
                 }
+                
+                
+                // Air pollution Index Forcast
+                if let airPollutionForcastData = forecastAirPollution {
+                    Section(header: Text("Air Pollution Index Forecast")) {
+                    }
+                    .onAppear {
+                        for item in airPollutionForcastData.list {
+                            let dateString = convertTimestampToString(item.dt)
+                            let aqi = item.main.aqi
+                            addIndexData(dt: dateString, aqi: aqi)
+                        }
+                    }
+                    VStack {
+                        Chart {
+                            ForEach(airPollutionIndexes, id: \.dt) { dataPoint in
+                                LineMark(
+                                    x: .value("section", dataPoint.dt),
+                                    y: .value("Air Quality Index", dataPoint.aqiLevel)
+                                )
+                                .foregroundStyle(by: .value("AQI Level", "AQI Level"))
+                                .interpolationMethod(.catmullRom)
+                            }
+                        }
+                        .chartForegroundStyleScale(["AQI Level": Color.blue])
+                        .chartXScale(range: .plotDimension(padding: 20.0))
+                        .chartXAxis(.hidden)
+                        .chartYAxis {
+                            AxisMarks(position: .trailing)
+                        }
+                        .chartPlotStyle { plotArea in
+                            plotArea.frame(maxWidth: .infinity, minHeight: 250.0, maxHeight: 250.0)
+                        }
+                        .chartLegend(.hidden)
+                    }
+                    .padding()
+                }
 
 
                 
@@ -166,7 +203,7 @@ private extension ContentView {
                 // Fetch current weather data
                 let fetchedWeather = try await weatherManager.getCurrentWeather(location: inputLocation)
                 self.currentWeather = fetchedWeather
-
+                
                 // Fetch forcast weather data
                 let fetchedForcastWeather = try await weatherManager.getForecastWeather(location: inputLocation)
                 self.forecastWeather = fetchedForcastWeather
@@ -194,10 +231,24 @@ private extension ContentView {
                 // Print the error for debugging purposes
                 print("Error: \(error.localizedDescription)")
                 self.errorMessage = "An unknown error occurred:\(error.localizedDescription)"
-                    
+                
             }
         }
         UIApplication.shared.endEditing() // Dismiss the keyboard
+    }
+    
+    // popping the weather index array
+    func addIndexData(dt: String, aqi: Int) {
+        let newData = AirQualityDataPoint(dt: dt, aqi: aqi)
+        airPollutionIndexes.append(newData)
+    }
+    
+    // helper method for converting the timestamp to a string
+    func convertTimestampToString(_ timestamp: Int) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss" // Adjust the format as needed
+        return dateFormatter.string(from: date)
     }
 }
 
