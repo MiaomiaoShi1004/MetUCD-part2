@@ -173,7 +173,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AA87B2A72B0EFB0D00B95C26 /* Build configuration list for PBXProject "MetUCD-part1" */;
+			buildConfigurationList = AA87B2A72B0EFB0D00B95C26 /* Build configuration list for PBXProject "MetUCD-part2" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -409,7 +409,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AA87B2A72B0EFB0D00B95C26 /* Build configuration list for PBXProject "MetUCD-part1" */ = {
+		AA87B2A72B0EFB0D00B95C26 /* Build configuration list for PBXProject "MetUCD-part2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA87B2B82B0EFB0E00B95C26 /* Debug */,
