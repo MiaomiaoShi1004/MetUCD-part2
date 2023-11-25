@@ -17,13 +17,15 @@
 		AA778DD52B100FBB00374DD9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA778DD42B100FBB00374DD9 /* Extensions.swift */; };
 		AA778E002B11307400374DD9 /* LaunchMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA778DFF2B11307400374DD9 /* LaunchMapView.swift */; };
 		AA778E022B120EAB00374DD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA778E012B120EAB00374DD9 /* ContentView.swift */; };
-		AA87B2B02B0EFB0D00B95C26 /* MetUCD_part1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87B2AF2B0EFB0D00B95C26 /* MetUCD_part1App.swift */; };
+		AA87B2B02B0EFB0D00B95C26 /* MetUCD_part2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87B2AF2B0EFB0D00B95C26 /* MetUCD_part2App.swift */; };
 		AA87B2B22B0EFB0D00B95C26 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87B2B12B0EFB0D00B95C26 /* WeatherView.swift */; };
 		AA87B2B42B0EFB0E00B95C26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA87B2B32B0EFB0E00B95C26 /* Assets.xcassets */; };
 		AA87B2B72B0EFB0E00B95C26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA87B2B62B0EFB0E00B95C26 /* Preview Assets.xcassets */; };
 		AA87B2C02B0EFBB000B95C26 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87B2BF2B0EFBB000B95C26 /* ModelData.swift */; };
 		AA87B2C22B0EFBC300B95C26 /* weatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = AA87B2C12B0EFBC300B95C26 /* weatherData.json */; };
 		AA87B2C42B0EFBF100B95C26 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87B2C32B0EFBF100B95C26 /* WeatherManager.swift */; };
+		AAC49F192B12594400F595D0 /* BlurredIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC49F182B12594400F595D0 /* BlurredIcon.swift */; };
+		AAC49F1B2B125CB800F595D0 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC49F1A2B125CB800F595D0 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,14 +39,16 @@
 		AA778DD42B100FBB00374DD9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AA778DFF2B11307400374DD9 /* LaunchMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchMapView.swift; sourceTree = "<group>"; };
 		AA778E012B120EAB00374DD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		AA87B2AC2B0EFB0D00B95C26 /* MetUCD-part1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MetUCD-part1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA87B2AF2B0EFB0D00B95C26 /* MetUCD_part1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetUCD_part1App.swift; sourceTree = "<group>"; };
+		AA87B2AC2B0EFB0D00B95C26 /* MetUCD-part2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MetUCD-part2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA87B2AF2B0EFB0D00B95C26 /* MetUCD_part2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetUCD_part2App.swift; sourceTree = "<group>"; };
 		AA87B2B12B0EFB0D00B95C26 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		AA87B2B32B0EFB0E00B95C26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA87B2B62B0EFB0E00B95C26 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA87B2BF2B0EFBB000B95C26 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		AA87B2C12B0EFBC300B95C26 /* weatherData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weatherData.json; sourceTree = "<group>"; };
 		AA87B2C32B0EFBF100B95C26 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		AAC49F182B12594400F595D0 /* BlurredIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredIcon.swift; sourceTree = "<group>"; };
+		AAC49F1A2B125CB800F595D0 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				AA778DC12B0F68F500374DD9 /* IconText.swift */,
+				AAC49F182B12594400F595D0 /* BlurredIcon.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -79,7 +84,7 @@
 		AA87B2A32B0EFB0D00B95C26 = {
 			isa = PBXGroup;
 			children = (
-				AA87B2AE2B0EFB0D00B95C26 /* MetUCD-part1 */,
+				AA87B2AE2B0EFB0D00B95C26 /* MetUCD-part2 */,
 				AA87B2AD2B0EFB0D00B95C26 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,24 +92,24 @@
 		AA87B2AD2B0EFB0D00B95C26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA87B2AC2B0EFB0D00B95C26 /* MetUCD-part1.app */,
+				AA87B2AC2B0EFB0D00B95C26 /* MetUCD-part2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AA87B2AE2B0EFB0D00B95C26 /* MetUCD-part1 */ = {
+		AA87B2AE2B0EFB0D00B95C26 /* MetUCD-part2 */ = {
 			isa = PBXGroup;
 			children = (
 				AA778DC02B0F68D400374DD9 /* Components */,
 				AA87B2BD2B0EFB1E00B95C26 /* Views */,
 				AA87B2BE2B0EFB7400B95C26 /* Managers */,
 				AA778DC52B0F759600374DD9 /* Models */,
-				AA87B2AF2B0EFB0D00B95C26 /* MetUCD_part1App.swift */,
+				AA87B2AF2B0EFB0D00B95C26 /* MetUCD_part2App.swift */,
 				AA778DD42B100FBB00374DD9 /* Extensions.swift */,
 				AA87B2B32B0EFB0E00B95C26 /* Assets.xcassets */,
 				AA87B2B52B0EFB0E00B95C26 /* Preview Content */,
 			);
-			path = "MetUCD-part1";
+			path = "MetUCD-part2";
 			sourceTree = "<group>";
 		};
 		AA87B2B52B0EFB0E00B95C26 /* Preview Content */ = {
@@ -134,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				AA87B2C32B0EFBF100B95C26 /* WeatherManager.swift */,
+				AAC49F1A2B125CB800F595D0 /* LocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -155,7 +161,7 @@
 			);
 			name = "MetUCD-part1";
 			productName = "MetUCD-part1";
-			productReference = AA87B2AC2B0EFB0D00B95C26 /* MetUCD-part1.app */;
+			productReference = AA87B2AC2B0EFB0D00B95C26 /* MetUCD-part2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -215,14 +221,16 @@
 				AA778DCB2B0FC24300374DD9 /* AirPolutionModel.swift in Sources */,
 				AA778E022B120EAB00374DD9 /* ContentView.swift in Sources */,
 				AA87B2B22B0EFB0D00B95C26 /* WeatherView.swift in Sources */,
-				AA87B2B02B0EFB0D00B95C26 /* MetUCD_part1App.swift in Sources */,
+				AA87B2B02B0EFB0D00B95C26 /* MetUCD_part2App.swift in Sources */,
 				AA87B2C42B0EFBF100B95C26 /* WeatherManager.swift in Sources */,
 				AA778DC72B0F75B500374DD9 /* currentWeatherModel.swift in Sources */,
 				AA778DC92B0FC1FA00374DD9 /* ForecastWeatherModel.swift in Sources */,
 				AA778E002B11307400374DD9 /* LaunchMapView.swift in Sources */,
 				AA87B2C02B0EFBB000B95C26 /* ModelData.swift in Sources */,
+				AAC49F192B12594400F595D0 /* BlurredIcon.swift in Sources */,
 				AA778DD52B100FBB00374DD9 /* Extensions.swift in Sources */,
 				AA778DC22B0F68F500374DD9 /* IconText.swift in Sources */,
+				AAC49F1B2B125CB800F595D0 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +363,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MetUCD-part1/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MetUCD-part2/Preview Content\"";
 				DEVELOPMENT_TEAM = FF54H898ZR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -369,8 +377,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ie.ucd.cs.comp47390.22205800.MetUCD-part1";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "ie.ucd.cs.comp47390.22205800.MetUCD-part2";
+				PRODUCT_NAME = "MetUCD-part2";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -384,7 +392,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MetUCD-part1/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MetUCD-part2/Preview Content\"";
 				DEVELOPMENT_TEAM = FF54H898ZR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -398,8 +406,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ie.ucd.cs.comp47390.22205800.MetUCD-part1";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "ie.ucd.cs.comp47390.22205800.MetUCD-part2";
+				PRODUCT_NAME = "MetUCD-part2";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

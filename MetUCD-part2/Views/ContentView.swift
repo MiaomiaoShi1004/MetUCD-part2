@@ -43,19 +43,21 @@ struct ContentView: View {
             Marker("Museum", coordinate: rom)
                 .tint(.orange)
         }
-        .safeAreaInset(edge: .bottom) {
+        .safeAreaInset(edge: .top) {
             HStack {
-                Spacer()
+
                 Button {
-                    // Center on CN Tower
                     camera = .region(
                         MKCoordinateRegion(
                             center: tower,
                             latitudinalMeters: 200,
                             longitudinalMeters: 200))
                 } label: {
-                    Text("CN Tower")
+                    BlurredIcon(logo: "location.circle")
                 }
+
+
+                Spacer()
                 Button {
                     // Center on ROM
                     camera = .region(
@@ -64,12 +66,14 @@ struct ContentView: View {
                             latitudinalMeters: 2000,
                             longitudinalMeters: 2000))
                 } label: {
-                    Text("ROM")
+                    BlurredIcon(logo: "magnifyingglass.circle")
                 }
-                Spacer()
+
             }
-            .padding(.top)
-            .background(.thinMaterial)
+            .padding([.leading,.trailing,.bottom])
+            .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+            
+            
         }
     }
 }

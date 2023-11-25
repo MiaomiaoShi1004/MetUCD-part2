@@ -27,8 +27,8 @@ struct LaunchMapView: View {
                     // center on the spire
                     camera = .region(MKCoordinateRegion(
                         center: spire,
-                    latitudinalMeters: 1000,
-                    longitudinalMeters: 1000))
+                    latitudinalMeters: 200,
+                    longitudinalMeters: 200))
                                      
                 } label: {
                     Text("Spire")
