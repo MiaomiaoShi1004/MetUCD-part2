@@ -12,7 +12,11 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     let manager = CLLocationManager()
     
-    @Published var currentLocation: CLLocationCoordinate2D?
+    // Set default value for currentLocation
+    @Published var currentLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(
+        latitude: 53.309938529972854,
+        longitude: -6.2215091104457905
+    )
     
     // indicates whether the location request is in progress
     @Published var isLoading = false
@@ -45,10 +49,10 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        currentLocation = locations.first?.coordinate
-        isLoading = false
-    }
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        currentLocation = locations.first?.coordinate
+//        isLoading = false
+//    }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error getting location", error)

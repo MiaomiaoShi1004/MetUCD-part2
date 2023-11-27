@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AA87B2AB2B0EFB0D00B95C26"
-               BuildableName = "MetUCD-part1.app"
+               BuildableName = "MetUCD-part2.app"
                BlueprintName = "MetUCD-part1"
                ReferencedContainer = "container:MetUCD-part2.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA87B2AB2B0EFB0D00B95C26"
-            BuildableName = "MetUCD-part1.app"
+            BuildableName = "MetUCD-part2.app"
             BlueprintName = "MetUCD-part1"
             ReferencedContainer = "container:MetUCD-part2.xcodeproj">
          </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA87B2AB2B0EFB0D00B95C26"
-            BuildableName = "MetUCD-part1.app"
+            BuildableName = "MetUCD-part2.app"
             BlueprintName = "MetUCD-part1"
             ReferencedContainer = "container:MetUCD-part2.xcodeproj">
          </BuildableReference>

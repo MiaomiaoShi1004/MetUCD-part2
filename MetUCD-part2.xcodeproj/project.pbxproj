@@ -24,8 +24,12 @@
 		AA87B2C02B0EFBB000B95C26 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87B2BF2B0EFBB000B95C26 /* ModelData.swift */; };
 		AA87B2C22B0EFBC300B95C26 /* weatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = AA87B2C12B0EFBC300B95C26 /* weatherData.json */; };
 		AA87B2C42B0EFBF100B95C26 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87B2C32B0EFBF100B95C26 /* WeatherManager.swift */; };
+		AABFB1132B145728008A1A48 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABFB1122B145728008A1A48 /* File.swift */; };
+		AABFB14B2B1469FC008A1A48 /* UserLoactionMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABFB14A2B1469FC008A1A48 /* UserLoactionMapView.swift */; };
+		AABFB14D2B14921F008A1A48 /* ShowTextFieldActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABFB14C2B14921F008A1A48 /* ShowTextFieldActionView.swift */; };
 		AAC49F192B12594400F595D0 /* BlurredIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC49F182B12594400F595D0 /* BlurredIcon.swift */; };
 		AAC49F1B2B125CB800F595D0 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC49F1A2B125CB800F595D0 /* LocationManager.swift */; };
+		AAC49F1D2B1298C600F595D0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC49F1C2B1298C600F595D0 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +51,12 @@
 		AA87B2BF2B0EFBB000B95C26 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		AA87B2C12B0EFBC300B95C26 /* weatherData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weatherData.json; sourceTree = "<group>"; };
 		AA87B2C32B0EFBF100B95C26 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		AABFB1122B145728008A1A48 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		AABFB14A2B1469FC008A1A48 /* UserLoactionMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoactionMapView.swift; sourceTree = "<group>"; };
+		AABFB14C2B14921F008A1A48 /* ShowTextFieldActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTextFieldActionView.swift; sourceTree = "<group>"; };
 		AAC49F182B12594400F595D0 /* BlurredIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredIcon.swift; sourceTree = "<group>"; };
 		AAC49F1A2B125CB800F595D0 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		AAC49F1C2B1298C600F595D0 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +139,10 @@
 				AA87B2B12B0EFB0D00B95C26 /* WeatherView.swift */,
 				AA778DFF2B11307400374DD9 /* LaunchMapView.swift */,
 				AA778E012B120EAB00374DD9 /* ContentView.swift */,
+				AAC49F1C2B1298C600F595D0 /* MapView.swift */,
+				AABFB14C2B14921F008A1A48 /* ShowTextFieldActionView.swift */,
+				AABFB1122B145728008A1A48 /* File.swift */,
+				AABFB14A2B1469FC008A1A48 /* UserLoactionMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,12 +235,16 @@
 				AA87B2B22B0EFB0D00B95C26 /* WeatherView.swift in Sources */,
 				AA87B2B02B0EFB0D00B95C26 /* MetUCD_part2App.swift in Sources */,
 				AA87B2C42B0EFBF100B95C26 /* WeatherManager.swift in Sources */,
+				AABFB14B2B1469FC008A1A48 /* UserLoactionMapView.swift in Sources */,
 				AA778DC72B0F75B500374DD9 /* currentWeatherModel.swift in Sources */,
 				AA778DC92B0FC1FA00374DD9 /* ForecastWeatherModel.swift in Sources */,
+				AAC49F1D2B1298C600F595D0 /* MapView.swift in Sources */,
 				AA778E002B11307400374DD9 /* LaunchMapView.swift in Sources */,
 				AA87B2C02B0EFBB000B95C26 /* ModelData.swift in Sources */,
+				AABFB1132B145728008A1A48 /* File.swift in Sources */,
 				AAC49F192B12594400F595D0 /* BlurredIcon.swift in Sources */,
 				AA778DD52B100FBB00374DD9 /* Extensions.swift in Sources */,
+				AABFB14D2B14921F008A1A48 /* ShowTextFieldActionView.swift in Sources */,
 				AA778DC22B0F68F500374DD9 /* IconText.swift in Sources */,
 				AAC49F1B2B125CB800F595D0 /* LocationManager.swift in Sources */,
 			);

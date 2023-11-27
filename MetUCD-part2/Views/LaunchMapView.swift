@@ -10,6 +10,7 @@ import SwiftUI
 
 struct LaunchMapView: View {
     
+    
     let spire = CLLocationCoordinate2D(latitude: 53.34992665027995, longitude:-6.260263231572287)
     let temp = 12
     
@@ -17,8 +18,11 @@ struct LaunchMapView: View {
     
     var body: some View {
         Map(position: $camera) {
-            Marker("Spire",monogram: Text("\(temp)"), coordinate: spire)
-                .tint(.green)
+//            Marker("Spire",monogram: Text("\(temp)"), coordinate: spire)
+//                .tint(.green)
+            
+            UserAnnotation()
+                .tint(.red)
         }
         .safeAreaInset(edge: .bottom) {
             HStack {
@@ -38,6 +42,11 @@ struct LaunchMapView: View {
         }
         .padding(.top)
         .background(.thinMaterial)
+        .mapControls() {
+            MapUserLocationButton()
+            MapCompass()
+            MapScaleView()
+        }
     }
 }
 
